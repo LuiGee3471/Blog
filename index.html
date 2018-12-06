@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LuiGee's Mansion</title>
+  <meta charset="utf-8">
+  <script>
+    function setLinkColor(color){
+      var i = 4;
+      var alist = document.querySelectorAll('a');
+      while(i < alist.length) {
+        alist[i].style.color = color;
+        i = i + 1;
+      }
+      alist[0].style.color = color;
+    }
+    function nightModeButton(self) {
+      var target = document.querySelector('body');
+      var sublist = document.getElementsByClassName('sublist')[0];
+      if(self.value === 'night') {
+        target.style.cssText = 'background-color: black; color:white;';
+        self.innerHTML = 'Day Mode';
+        self.value='day';
+        setLinkColor('white');
+        sublist.style.backgroundColor = 'black';
+      }
+      else {
+        target.style.cssText = 'background-color: white; color:black;';
+        self.value='night';
+        self.innerHTML = 'Night Mode';
+        setLinkColor('black');
+        sublist.style.backgroundColor = '#F4F4F4';
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grid">
+    <header><h2><a href="index.html">LuiGee's Mansion</a></h2></header>
+    <nav>
+      <ul>
+        <li><a href="review_game.html">Review - Game</a></li>
+        <li><a href="review_etc.html">Review - ETC</a></li>
+        <li><a href="not_review.html">Not Review</a></li>
+      </ul>
+    </nav>
+    <article style="grid-column : col-start / -1;">
+      <p>주로 게임, 그 외 다양한 이야기를 올리는 루이지의 저택입니다.</p>
+    </article>
+  </div>
+  <button id="night_day" value="night" onclick="
+  nightModeButton(this)">Night Mode</button>
+</body>
+</html>
