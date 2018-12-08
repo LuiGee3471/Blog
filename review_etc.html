@@ -4,35 +4,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Review - ETC</title>
   <meta charset="utf-8">
-  <script>
-    function setLinkColor(color){
-      var i = 4;
-      var alist = document.querySelectorAll('a');
-      while(i < alist.length) {
-        alist[i].style.color = color;
-        i = i + 1;
-      }
-      alist[0].style.color = color;
-    }
-    function nightModeButton(self) {
-      var target = document.querySelector('body');
-      var sublist = document.getElementsByClassName('sublist')[0];
-      if(self.value === 'night') {
-        target.style.cssText = 'background-color: black; color:white;';
-        self.innerHTML = 'Day Mode';
-        self.value='day';
-        setLinkColor('white');
-        sublist.style.backgroundColor = 'black';
-      }
-      else {
-        target.style.cssText = 'background-color: white; color:black;';
-        self.value='night';
-        self.innerHTML = 'Night Mode';
-        setLinkColor('black');
-        sublist.style.backgroundColor = '#F4F4F4';
-      }
-    }
-  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="colors.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
